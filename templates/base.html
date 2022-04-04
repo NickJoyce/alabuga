@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>{{ the_title }}</title> 
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="header">
+				<div class="top_menu">
+					<a href="{{ url_for('index') }}">Главная</a> |
+					<a href="{{ url_for('hierarchy') }}">Иерархия</a>
+				</div>
+			</div>
+
+			<div class="page_title"><h2>{{ the_title }}</h2></div>
+
+			<div class="content">
+				{% block main %}
+
+				{% endblock %}
+			</div>
+
+			<div class="footer"></div>
+		</div>
+		<script src="{{ url_for('static', filename='js/file_name.js') }}"></script>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+{% extends 'base.html' %} 
+
+{% block main %}
+
+{% for cat, msg in get_flashed_messages(True) %}
+<div class='flash {{cat}}'>{{msg}}</div>
+{% endfor %}
+
+<div class="resume">
+    <div>
+        <img src="{{url_for('static',filename = 'img/photo.jpg')}}" alt="photo">
+    </div>
+
+    <div>
+        <h3>Objective</h3>
+        <p>To contribute professional skills to achieving your company's goals as an python developer.</p>
+
+        <h3>Education</h3>
+        <p>St.Petersburg State University of Industrial Technologies and Design, department of management and economics,
+            specialist degree in management (2005-2010)</p>
+
+        <h3>Qualifications</h3>
+        <p>Object oriented programming in python course in Peter the Great St.Petersburg Polytechnic University
+            (September - October 2021)</p>
+
+        <h3>Work experience</h3>
+        <p>2010-2012, Energosvet, St.Petersburg , Russia, Sales manager</p>
+        <p>2012-2020, Sole proprietorship, St.Petersburg , Russia, Online store manager</p>
+        <p>2020-2022, Self-employment, St.Petersburg , Russia, Freelance Python developer</p>
+
+        <h3>Personal qualities</h3>
+        <p>Dependable, determined, initiative, versatile</p>
+
+        <h3>Key skills</h3>
+        <p>Python, PostgreSQL, MySQL, SQLite, Redis, Flask, Django, linux, HTML/CSS/JS</p>
+
+        <h3>Special skills</h3>
+        <p>Russian language: native</p>
+        <p>English language : reading and translating technical documentation</p>
+        <p>Driving License: Category B</p>
+        <p>Hobbies: running, swimming, cycling</p>
+
+        <h3>References</h3>
+        <p>available upon request</p>
+
+    </div>
+
+    <div>
+
+            <p>Nikita Smirnov</p>
+            <h3>INFO</h3>
+            <p>age: 33</p>
+            <p>location: St. Petersburg</p>
+
+            <h3>CONTACTS</h3>
+            <p>phone: +79218850028</p>
+            <p>telegram: @NickJoyce</p>
+            <p>email: actan-spb@mail.ru</p>
+
+    </div>
+</div>
+
+{% endblock %}

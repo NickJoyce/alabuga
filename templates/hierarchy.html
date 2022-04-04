@@ -1,0 +1,58 @@
+{% extends 'base.html' %} 
+
+{% block main %}
+{% for cat, msg in get_flashed_messages(True) %}
+<div class='flash {{cat}}'>{{msg}}</div>
+
+{% endfor %}
+
+{% if rows_number < 500 %}
+    <form form method='POST' action="{{ url_for('gen') }}">
+        Создать таблицы, сгенерировать и добавить в таблицы тестовые данные:
+        <button class="change_lang_btn" type="SUBMIT">GO</button>
+    </form>
+{% endif %}
+
+
+{% for type in townsman_types %}
+    <table class="townsmen">
+        <tr>
+            {% if type == 'герцог' %}
+                <td colspan="6" class="townsman_type_header">ГЕРЦОГИ</td>
+            {% elif type == 'барон' %}
+                 <td colspan="6" class="townsman_type_header">БАРОНЫ</td>
+            {% elif type == 'рыцарь' %}
+                 <td colspan="6" class="townsman_type_header">РЫЦАРИ</td>
+            {% endif %}
+        </tr>
+        <tr>
+            {% for column_name in columns %}
+            <td>
+                <form method='POST' action="{{ url_for('hierarchy') }}">
+                    <input type='hidden' name='column' value="{{ column_name }}">
+                    <button type="SUBMIT">
+                        <img class="arrows_img" src="{{ url_for('static', filename='img/arrows.png') }}" alt="">
+                    </button>
+                </form>
+            </td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <th>id</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Возраст</th>
+        </tr>
+    {% for townsman in townsmen %}
+        {% if townsman.townsman_type == type %}
+        <tr>
+            <td>{{townsman.id}}</td>
+            <td>{{townsman.first_name}}</td>
+            <td>{{townsman.last_name}}</td>
+            <td>{{townsman.age}}</td>
+        </tr>
+            {% endif %}
+    {% endfor %}
+    </table>
+{% endfor %}
+{% endblock %}
