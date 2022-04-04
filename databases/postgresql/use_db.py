@@ -3,8 +3,8 @@ import random
 
 ##################################################   DATABASE CONFIG   ##################################################
 db_config = {'host': 'localhost',
-             'user': 'nick',   
-             'password': 'Ff3#g127',
+             'user': '',
+             'password': '',
              'port': '5432',
              'database':'main_db'}
 

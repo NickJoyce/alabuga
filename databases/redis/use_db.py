@@ -3,7 +3,7 @@ import redis
 ##################################################   DATABASE CONFIG   ##################################################
 redis_config = {'host':"localhost",
 			    'port':6379,
-				'password': '929884aec44464e94d14647d4891f50f3339f836062d5a5cf6ab67a18b72670a',
+				'password': '',
 				 'charset':"utf-8",
 				 'decode_responses':True,
 				'db':0}

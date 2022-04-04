@@ -3,8 +3,8 @@ import mysql.connector
 
 ##################################################   DATABASE CONFIG   ##################################################
 db_config = {'host': 'localhost',
-			 'user': 'nick',
-			 'password': 'Ff3#g127',
+			 'user': '',
+			 'password': '',
 			 'database': 'main_db'}
 
 
